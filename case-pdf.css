@@ -1,8 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
 :root {
-  --text: #1f1c18;
-  --muted: #625a51;
-  --line: rgba(31, 28, 24, 0.16);
-  --bg: #fffdfa;
+  --text: #1c1915;
+  --muted: #5c554c;
+  --line: rgba(28, 25, 21, 0.12);
+  --bg: #f3ede4;
+  --surface: #fffdf8;
+  --accent: #8b5f3d;
+  --gold: #b8956a;
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
 }
 
 *,
@@ -13,16 +19,19 @@ body {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
   color: var(--text);
-  background: var(--bg);
+  background: radial-gradient(120% 80% at 50% -10%, rgba(255, 251, 244, 0.9) 0%, var(--bg) 52%);
 }
 
 .sheet {
   width: 210mm;
   min-height: 297mm;
-  margin: 0 auto;
+  margin: 8mm auto;
   padding: 18mm 16mm;
   display: grid;
   gap: 12mm;
+  background: var(--surface);
+  box-shadow: 0 24px 64px rgba(25, 23, 20, 0.12);
+  border: 1px solid rgba(184, 149, 106, 0.24);
 }
 
 .head {
@@ -35,13 +44,17 @@ body {
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--accent);
 }
 
 h1 {
   margin: 0 0 3mm;
-  font-size: 30px;
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 600;
   line-height: 1.02;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 .subtitle {
@@ -58,13 +71,17 @@ h1 {
 
 .card {
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 5mm;
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 12px 32px rgba(25, 23, 20, 0.05);
 }
 
 .card h2 {
   margin: 0 0 3mm;
-  font-size: 16px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .card p,
@@ -80,7 +97,7 @@ h1 {
 }
 
 .quote {
-  border-left: 3px solid var(--line);
+  border-left: 3px solid var(--gold);
   padding-left: 4mm;
   margin: 0;
   font-size: 14px;
@@ -98,6 +115,12 @@ h1 {
 }
 
 @media print {
+  @page { size: A4 portrait; margin: 0; }
   body { background: #fff; }
-  .sheet { margin: 0; padding: 14mm 12mm; }
+  .sheet {
+    margin: 0;
+    padding: 14mm 12mm;
+    box-shadow: none;
+    border: 0;
+  }
 }
