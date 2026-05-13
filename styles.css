@@ -290,6 +290,12 @@ h1 {
 
 .video-wrap { border: 1px solid var(--line); border-radius: var(--radius); padding: 0.85rem; background: var(--surface); box-shadow: var(--shadow-card); }
 
+.reviews-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.48fr);
+  gap: 1.4rem;
+  align-items: stretch;
+}
 .reviews { position: relative; min-height: 520px; }
 .review-card {
   position: absolute;
@@ -307,7 +313,7 @@ h1 {
   align-content: start;
 }
 .review-card.is-active { opacity: 1; transform: translateY(0); }
-.review-card__title { margin: 0; font-weight: 600; }
+.review-card__title { display: none; }
 .review-card__text {
   margin: 0;
   color: var(--muted);
@@ -321,6 +327,15 @@ h1 {
   object-fit: contain;
   border-radius: 16px;
   background: #fff;
+}
+.reviews-photo {
+  margin: 0;
+  min-height: 520px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  outline: 1px solid rgba(184, 149, 106, 0.28);
+  outline-offset: 6px;
 }
 
 .pdf-list {
@@ -347,21 +362,6 @@ h1 {
 .section--contact {
   background: linear-gradient(155deg, #221f19 0%, var(--dark) 42%, #100e0c 100%);
   color: #f2efeb;
-}
-.contact-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
-  gap: 2rem;
-  align-items: end;
-}
-.contact-photo {
-  margin: 0;
-  min-height: 520px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.28);
-  outline: 1px solid rgba(184, 149, 106, 0.35);
-  outline-offset: 6px;
 }
 .section--contact .section-title { color: #fff; }
 .section--contact .section-eyebrow, .section--contact .section-lead { color: #cec5bb; }
@@ -431,12 +431,12 @@ h1 {
   .nav--open { transform: translateY(0); opacity: 1; pointer-events: auto; }
   .grid { grid-template-columns: 1fr; }
   .grid--offers, .grid--cases, .intelligence-grid, .trust-grid, .method-details__content, .lead-magnet { grid-template-columns: 1fr; }
-  .contact-layout { grid-template-columns: 1fr; }
+  .reviews-layout { grid-template-columns: 1fr; }
   h1 { max-width: 14ch; }
   .section-title { max-width: 13ch; }
   .bottom-photo { min-height: 300px; }
   .reviews { min-height: 420px; }
   .review-card img { height: 260px; }
-  .contact-photo { min-height: 420px; order: -1; }
+  .reviews-photo { min-height: 340px; }
   .footer__links { justify-content: flex-start; }
 }
