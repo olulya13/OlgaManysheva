@@ -20,6 +20,7 @@ body {
   font-family: Inter, system-ui, sans-serif;
   color: var(--text);
   background: radial-gradient(120% 80% at 50% -10%, rgba(255, 251, 244, 0.9) 0%, var(--bg) 52%);
+  overflow-x: hidden;
 }
 
 .sheet {
@@ -122,5 +123,48 @@ h1 {
     padding: 14mm 12mm;
     box-shadow: none;
     border: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background: var(--bg);
+  }
+
+  .sheet {
+    width: min(100% - 1rem, 720px);
+    min-height: auto;
+    margin: 0.5rem auto;
+    padding: 1.25rem;
+    gap: 1rem;
+    box-shadow: 0 12px 32px rgba(25, 23, 20, 0.08);
+  }
+
+  .head {
+    padding-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 11vw, 3rem);
+    line-height: 1.05;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card p,
+  .card li {
+    font-size: 0.95rem;
+  }
+
+  .foot {
+    display: grid;
+    gap: 0.4rem;
   }
 }
